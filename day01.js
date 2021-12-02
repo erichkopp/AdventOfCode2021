@@ -2038,7 +2038,7 @@ const findLargestSetsOfThree = () => {
         prev = current
     }
 
-    console.log(largerMeasurements)
+    console.log(`Pt. 2: ${largerMeasurements}`)
 }
 
 

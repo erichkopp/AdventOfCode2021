@@ -1021,9 +1021,7 @@ const getDepthAndHorizontalPosition = () => {
         }
     })
 
-    console.log(horizontal)
-    console.log(depth)
-    console.log(horizontal * depth)
+    console.log(`Pt. 1: ${horizontal} * ${depth} = ${horizontal * depth}`)
 }
 
 
@@ -1048,9 +1046,7 @@ const getDepthHorizontalAndAim = () => {
         }
     })
 
-    console.log(horizontal)
-    console.log(depth)
-    console.log(horizontal * depth)
+    console.log(`Pt. 2: ${horizontal} * ${depth} = ${horizontal * depth}`)
 }
 
 

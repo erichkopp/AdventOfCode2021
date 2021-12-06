@@ -1012,8 +1012,8 @@ const getPowerConsumption = () => {
     for (let i = 0; i < data[0].length; i++) {
         let count = 0
     
-        data.forEach(element => {
-            count += parseInt(element[i])
+        data.forEach(num => {
+            count += parseInt(num[i])
         });
     
         power[i] = count
@@ -1047,7 +1047,70 @@ const getPowerConsumption = () => {
     episilon = parseInt(episilon, 2)
     
     // Output
-    console.log(`Gamma: ${gamma}, Epsilon: ${episilon}, Power: ${gamma * episilon}`)
+    console.log(
+        `Gamma: ${gamma}, Epsilon: ${episilon}, Power: ${gamma * episilon}`
+    )
 }
 
 getPowerConsumption()
+
+
+
+// Pt. 2
+const getRating = (data, type) => {
+
+    for (let i = 0; i < data[0].length; i++) {
+        let zerosCount = 0
+        let onesCount = 0
+        
+        data.forEach(num => {
+            if (parseInt(num[i]) === 1) {
+                onesCount += 1
+            }
+    
+            if (parseInt(num[i]) === 0) {
+                zerosCount += 1
+            }
+        });
+    
+        if (type === 'oxygenGenerator') {
+            if (onesCount > zerosCount) {
+                data = data.filter(num => num[i] === '1')
+            }
+        
+            if (zerosCount > onesCount) {
+                data = data.filter(num => num[i] === '0')
+            }
+        
+            if (onesCount === zerosCount) {
+                data = data.filter(num => num[i] === '1')
+            }
+        }
+
+        if (type === 'co2Scrubber') {
+            if (onesCount > zerosCount) {
+                data = data.filter(num => num[i] === '0')
+            }
+        
+            if (zerosCount > onesCount) {
+                data = data.filter(num => num[i] === '1')
+            }
+        
+            if (onesCount === zerosCount) {
+                data = data.filter(num => num[i] === '0')
+            }
+        }
+        // console.log(data)
+
+        if (data.length === 1) {
+            break
+        }
+    }
+
+    return data
+}
+
+let oxygenGenerator = parseInt(getRating(data, 'oxygenGenerator').join(''), 2)
+let co2Scrubber = parseInt(getRating(data, 'co2Scrubber').join(''), 2)
+
+console.log(oxygenGenerator * co2Scrubber)

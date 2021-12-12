@@ -29,7 +29,7 @@ const parsePuzzleInput = () => {
 }
 
 
-const playBingo = (drawNumbers, allPuzzles) => {
+const playBingoPt1 = (drawNumbers, allPuzzles) => {
 
     let sumOfRemainingNums = 0
 
@@ -93,4 +93,4 @@ const playBingo = (drawNumbers, allPuzzles) => {
 }
 
 
-playBingo(parsePuzzleInput()[0], parsePuzzleInput()[1])
+playBingoPt1(parsePuzzleInput()[0], parsePuzzleInput()[1])

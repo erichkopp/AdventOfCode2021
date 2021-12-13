@@ -61,7 +61,7 @@ const playBingoPt1 = (drawNumbers, allPuzzles) => {
                             }
                         }
 
-                        // Find horizontal bingo
+                        // Find vertical bingo
                         for (let i = 0; i < allPuzzles[0].length; i++) {
                             let vertical = []
                             for (let puzzleIndex = 0; puzzleIndex < allPuzzles.length; puzzleIndex++) {
